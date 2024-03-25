@@ -48,10 +48,10 @@
 
     <script>
         function rollDice() {
-            // Get a random number between 1 and 6
+            
             var diceResult = Math.floor(Math.random() * 6) + 1;
 
-            // Generate dots based on the dice result
+            
             var dotsHtml = '';
             switch (diceResult) {
                 case 1:
@@ -76,7 +76,7 @@
                     break;
             }
 
-            // Display the result
+            
             document.getElementById('dice').innerHTML = dotsHtml;
         }
     </script>
