@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        h1{
+            font-style: italic;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color:crimson ;
+        }
+        .dice {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 20px auto;
+            position: relative;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+        }
+        .dot:nth-child(1) { top: 20px; left: 20px; }
+        .dot:nth-child(2) { top: 20px; left: 40px; }
+        .dot:nth-child(3) { top: 20px; left: 60px; }
+        .dot:nth-child(4) { top: 40px; left: 20px; }
+        .dot:nth-child(5) { top: 40px; left: 40px; }
+        .dot:nth-child(6) { top: 40px; left: 60px; }
+        .dot:nth-child(7) { top: 60px; left: 20px; }
+        .dot:nth-child(8) { top: 60px; left: 40px; }
+        .dot:nth-child(9) { top: 60px; left: 60px; }
+    </style>
+</head>
+<body>
+    <h1>Push one's luck</h1>
+    <div class="dice" id="dice"></div>
+    <button onclick="rollDice()">Roll Dice</button>
+
+    <script>
+        function rollDice() {
+            // Get a random number between 1 and 6
+            var diceResult = Math.floor(Math.random() * 6) + 1;
+
+            // Generate dots based on the dice result
+            var dotsHtml = '';
+            switch (diceResult) {
+                case 1:
+                    dotsHtml = '<div class="dot"></div>';
+                    break;
+                case 2:
+                    dotsHtml = '<div class="dot"></div><div class="dot"></div>';
+                    break;
+                case 3:
+                    dotsHtml = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+                    break;
+                case 4:
+                    dotsHtml = '<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+                    break;
+                case 5:
+                    dotsHtml = '<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+                    break;
+                case 6:
+                    dotsHtml = '<div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+                    break;
+                default:
+                    break;
+            }
+
+            // Display the result
+            document.getElementById('dice').innerHTML = dotsHtml;
+        }
+    </script>
+</body>
+</html>
